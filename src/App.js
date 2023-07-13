@@ -1,67 +1,28 @@
-import React,{useState} from 'react';
-
-
-
-// useState
-// useEffect
-
+import React, { useState } from "react";
+import "./App.css";
+import Signup from "./Signup";
+import Login from "./Login";
 
 function App() {
+  const [state, setState] = useState(false);
 
-  const [state,setState] = useState(0);
-
-  
-  
-  
   return (
-    <div style={{textAlign:"center"}}>
-
-
-    <h1>{state}</h1>
-    <button
-    
-    
-   onClick={
-
-    function name(params) {
-
-      console.log('button clicked')
-
-      setState(state+1)
-      
-    }
-
-
-   } 
-    
-    
-    
-    
-    >Increment +</button>
-
-
-
-
-    <button
-    
-    
-    
-    onClick={
-
-
-      function name(params) {
-        console.log('decrement...')
-        setState(state-1)
-      }
-
-    }
-    
-    
-    
-    >Descrement - </button>
-
+    <div>
+      <div className="buttons">
+        <button
+          onClick={function name(params) {
+            setState(true);
+          }}
+        >
+          Login
+        </button>
+        <button onClick={function name(params) {
+          setState(false)
+        }}>Signup</button>
+      </div>
+      {state ? <Login /> : <Signup />}
     </div>
-    )
+  );
 }
 
-export default App
+export default App;
